@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primul meu site protejat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section id="authBox" class="panel">
+      <h1>Autentificare</h1>
+      <p>Introdu emailul si parola pentru a vedea pagina.</p>
+
+      <form id="loginForm">
+        <label for="email">Email</label>
+        <input id="email" type="email" autocomplete="email" required>
+
+        <label for="password">Parola</label>
+        <input id="password" type="password" autocomplete="current-password" required>
+
+        <button type="submit">Intra in aplicatie</button>
+      </form>
+
+      <p id="authMessage" class="message"></p>
+    </section>
+
+    <section id="appBox" class="panel hidden">
+      <p class="eyebrow">Pagina protejata</p>
+      <h1>Salut! Site-ul meu e live pe Firebase.</h1>
+      <p>Acest continut este vizibil doar dupa logare cu email si parola.</p>
+      <p class="user-line">Logat ca: <strong id="userEmail"></strong></p>
+      <button id="logoutButton" type="button">Delogare</button>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
