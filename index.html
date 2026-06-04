@@ -3,37 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Primul meu site protejat</title>
+  <title>Aplicatie cu doua butoane</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <section id="authBox" class="panel">
-      <h1>Autentificare</h1>
-      <p>Introdu emailul si parola pentru a vedea pagina.</p>
+  <main class="app">
+    <h1>Aplicatie cu doua butoane</h1>
+    <p>Alege unul dintre butoane si vezi mesajul afisat.</p>
 
-      <form id="loginForm">
-        <label for="email">Email</label>
-        <input id="email" type="email" autocomplete="email" required>
+    <div class="buttons">
+      <button id="redButton" class="button red" type="button">Buton rosu</button>
+      <button id="greenButton" class="button green" type="button">Buton verde</button>
+    </div>
 
-        <label for="password">Parola</label>
-        <input id="password" type="password" autocomplete="current-password" required>
-
-        <button type="submit">Intra in aplicatie</button>
-      </form>
-
-      <p id="authMessage" class="message"></p>
-    </section>
-
-    <section id="appBox" class="panel hidden">
-      <p class="eyebrow">Pagina protejata</p>
-      <h1>Salut! Site-ul meu e live pe Firebase.</h1>
-      <p>Acest continut este vizibil doar dupa logare cu email si parola.</p>
-      <p class="user-line">Logat ca: <strong id="userEmail"></strong></p>
-      <button id="logoutButton" type="button">Delogare</button>
-    </section>
+    <p id="message" class="message" aria-live="polite">Apasa un buton.</p>
   </main>
 
-  <script type="module" src="app.js"></script>
+  <script>
+    const message = document.getElementById("message");
+    const redButton = document.getElementById("redButton");
+    const greenButton = document.getElementById("greenButton");
+
+    redButton.addEventListener("click", () => {
+      message.textContent = "visezi";
+    });
+
+    greenButton.addEventListener("click", () => {
+      message.textContent = "te-ai trezit";
+    });
+  </script>
 </body>
 </html>
