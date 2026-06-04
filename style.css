@@ -25,14 +25,14 @@ main {
   box-shadow: 0 12px 32px rgba(23, 32, 51, 0.12);
 }
 
-.hidden {
-  display: none;
-}
-
 .app {
   display: grid;
   gap: 22px;
   text-align: center;
+}
+
+.hidden {
+  display: none !important;
 }
 
 h1,
