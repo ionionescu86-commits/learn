@@ -4,3 +4,4 @@ node_modules/
 .firebaserc.local
 .npm-cache/
 .config/
+.ssh/
