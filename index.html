@@ -3,34 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aplicatie cu doua butoane</title>
+  <title>Aplicatie protejata</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="app">
-    <h1>Aplicatie cu doua butoane</h1>
-    <p>Alege unul dintre butoane si vezi mesajul afisat.</p>
+  <main>
+    <section id="loginPanel" class="panel">
+      <h1>Autentificare</h1>
+      <p>Introdu emailul si parola pentru a accesa aplicatia.</p>
 
-    <div class="buttons">
-      <button id="redButton" class="button red" type="button">Buton rosu</button>
-      <button id="greenButton" class="button green" type="button">Buton verde</button>
-    </div>
+      <form id="loginForm" class="form">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
 
-    <p id="message" class="message" aria-live="polite">Apasa un buton.</p>
+        <label for="password">Parola</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+
+        <button class="login-button" type="submit">Intra in aplicatie</button>
+      </form>
+
+      <p id="loginMessage" class="error" aria-live="polite"></p>
+    </section>
+
+    <section id="appPanel" class="app panel hidden">
+      <div class="top-bar">
+        <p>Logat ca: <strong id="userEmail"></strong></p>
+        <button id="logoutButton" class="logout-button" type="button">Delogare</button>
+      </div>
+
+      <h1>Aplicatie cu doua butoane</h1>
+      <p>Alege unul dintre butoane si vezi mesajul afisat.</p>
+
+      <div class="buttons">
+        <button id="redButton" class="button red" type="button">Buton rosu</button>
+        <button id="greenButton" class="button green" type="button">Buton verde</button>
+      </div>
+
+      <p id="message" class="message" aria-live="polite">Apasa un buton.</p>
+    </section>
   </main>
 
-  <script>
-    const message = document.getElementById("message");
-    const redButton = document.getElementById("redButton");
-    const greenButton = document.getElementById("greenButton");
-
-    redButton.addEventListener("click", () => {
-      message.textContent = "visezi";
-    });
-
-    greenButton.addEventListener("click", () => {
-      message.textContent = "te-ai trezit";
-    });
-  </script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>

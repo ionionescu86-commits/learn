@@ -10,12 +10,28 @@ body {
   background: #f2f5f9;
 }
 
-.app {
+main {
   min-height: 100vh;
   display: grid;
-  place-content: center;
-  gap: 22px;
+  place-items: center;
   padding: 24px;
+}
+
+.panel {
+  width: min(100%, 460px);
+  padding: 28px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(23, 32, 51, 0.12);
+}
+
+.hidden {
+  display: none;
+}
+
+.app {
+  display: grid;
+  gap: 22px;
   text-align: center;
 }
 
@@ -28,6 +44,25 @@ h1 {
   font-size: 32px;
 }
 
+.form {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+label {
+  font-weight: 700;
+  text-align: left;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #b7c1cf;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
 .buttons {
   display: flex;
   flex-wrap: wrap;
@@ -35,19 +70,34 @@ h1 {
   gap: 16px;
 }
 
-.button {
-  min-width: 150px;
-  padding: 14px 18px;
+button {
   border: 0;
   border-radius: 8px;
   color: #ffffff;
-  font-size: 18px;
   font-weight: 700;
   cursor: pointer;
 }
 
-.button:hover {
+button:hover {
   filter: brightness(0.92);
+}
+
+.login-button {
+  margin-top: 8px;
+  padding: 12px 16px;
+  background: #1f6feb;
+  font-size: 16px;
+}
+
+.logout-button {
+  padding: 8px 12px;
+  background: #526070;
+}
+
+.button {
+  min-width: 150px;
+  padding: 14px 18px;
+  font-size: 18px;
 }
 
 .red {
@@ -62,8 +112,23 @@ h1 {
   min-height: 54px;
   padding: 16px 20px;
   border-radius: 8px;
-  background: #ffffff;
+  background: #f2f5f9;
   font-size: 28px;
   font-weight: 700;
-  box-shadow: 0 12px 32px rgba(23, 32, 51, 0.12);
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #526070;
+  font-size: 14px;
+  text-align: left;
+}
+
+.error {
+  min-height: 24px;
+  margin-top: 14px;
+  color: #b42318;
 }
